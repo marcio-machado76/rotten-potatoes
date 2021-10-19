@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+  db:
+    image: mongo:4.4.3
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongouser
+      MONGO_INITDB_ROOT_PASSWORD: mongopasswd
+    volumes:
+      - mongovol:/data/db
+    networks:
+      - net-app-mongo
+
+  app:
+    image: machado1976/rotten-potatoes:latest
+    build:
+      dockerfile: ./src/Dockerfile
+      context: . 
+    ports:
+      - 5000:5000
+    environment:
+      MONGODB_DB: mongodeploy
+      MONGODB_HOST: db
+      MONGODB_PORT: 27017
+      MONGODB_USERNAME: mongouser
+      MONGODB_PASSWORD: mongopasswd
+    depends_on:
+      - db
+    networks:
+      - net-app-mongo
+
+volumes:
+  mongovol:
+
+networks:
+  net-app-mongo:
+    driver: bridge
+
