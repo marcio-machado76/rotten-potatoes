@@ -4,17 +4,15 @@
 ## **Como utilizar**
   - Para o uso dessa aplicação são necessárias algumas das configurações abaixo:
 
-### Configuração
+### Configurações
 
-|**Variáveis de ambiente do mongodb**|
-|------------------------------------|
-|  Variável   |     Descrição        |
-|-------------|----------------------|
-| MONGODB_DB  | Nome do database|
-|MONGODB_HOST | Host do MongoDB |
-|MONGODB_PORT | Porta de acesso ao MongoDB|
-|MONGODB_USERNAME | Usuário do MongoDB |
-|MONGODB_PASSWORD | Senha do MongoDB |
+  |  Variável   |     Descrição        |
+  |-------------|----------------------|
+  | MONGODB_DB  | Nome do database|
+  |MONGODB_HOST | Host do MongoDB |
+  |MONGODB_PORT | Porta de acesso ao MongoDB|
+  |MONGODB_USERNAME | Usuário do MongoDB |
+  |MONGODB_PASSWORD | Senha do MongoDB |
 
 
 
@@ -75,8 +73,8 @@ networks:
 ```
 
 ### Comandos 
-  - Acesso a pasta 'src/', `cd src/`
+  - Acesso a pasta onde estão localizados os arquivos "Dockerfile e docker-compose.yaml", `cd src/`
   - Execute o comando `docker-compose up -d`
   - Aguarde concluir todo o processo e depois acesse a 
-  aplicação no browser através do endereço <localhost:5000>
+  aplicação no browser através do endereço <`localhost:5000`>
   - Para terminar a aplicação execute o comando `docker-compose down`
